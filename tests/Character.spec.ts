@@ -38,10 +38,10 @@ describe("The Character class", () => {
       expect(drizzt.dex).toBe(5);
     }
     try {
-      drizzt.dex = 18.5;
+      drizzt.wis = 18.5;
     } catch (err) {
-      expect((err as Error).message).toBe("The new dexterity is invalid");
-      expect(drizzt.dex).toBe(5);
+      expect((err as Error).message).toBe("The new wisdom is invalid");
+      expect(drizzt.wis).toBe(0);
     }
   });
 });
