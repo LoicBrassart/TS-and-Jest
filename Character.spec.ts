@@ -1,4 +1,4 @@
-import { Character } from "src/classes";
+import { Character } from "./src/classes";
 
 describe("The Character class", () => {
   it("can instantiate", () => {
