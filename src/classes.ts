@@ -28,7 +28,7 @@ export class Character {
     return Math.floor((this._STR - 10) / 2);
   }
   public set str(value: number) {
-    if (value < 1 || value > 20) {
+    if (value < 1 || value > 20 || Math.floor(value) !== value) {
       throw new Error("The new strength is invalid");
     }
     this._STR = value;
@@ -38,7 +38,7 @@ export class Character {
     return Math.floor((this._DEX - 10) / 2);
   }
   public set dex(value: number) {
-    if (value < 1 || value > 20) {
+    if (value < 1 || value > 20 || Math.floor(value) !== value) {
       throw new Error("The new dexterity is invalid");
     }
     this._DEX = value;
@@ -48,7 +48,7 @@ export class Character {
     return Math.floor((this._CON - 10) / 2);
   }
   public set con(value: number) {
-    if (value < 1 || value > 20) {
+    if (value < 1 || value > 20 || Math.floor(value) !== value) {
       throw new Error("The new constitution is invalid");
     }
     this._CON = value;
@@ -58,7 +58,7 @@ export class Character {
     return Math.floor((this._INT - 10) / 2);
   }
   public set int(value: number) {
-    if (value < 1 || value > 20) {
+    if (value < 1 || value > 20 || Math.floor(value) !== value) {
       throw new Error("The new intelligence is invalid");
     }
     this._INT = value;
@@ -68,7 +68,7 @@ export class Character {
     return Math.floor((this._WIS - 10) / 2);
   }
   public set wis(value: number) {
-    if (value < 1 || value > 20) {
+    if (value < 1 || value > 20 || Math.floor(value) !== value) {
       throw new Error("The new wisdom is invalid");
     }
     this._WIS = value;
@@ -78,7 +78,7 @@ export class Character {
     return Math.floor((this._CHA - 10) / 2);
   }
   public set cha(value: number) {
-    if (value < 1 || value > 20) {
+    if (value < 1 || value > 20 || Math.floor(value) !== value) {
       throw new Error("The new charisma is invalid");
     }
     this._CHA = value;
@@ -140,7 +140,7 @@ export class Character {
     // Edge case - One die got an edge value
     if (roll1 === true) return roll2;
     if (roll2 === true) return roll1;
-    if (roll1 === false || roll2 === false) return true;
+    if (roll1 === false || roll2 === false) return false;
 
     // Nominal case
     return Math.min(roll1, roll2);

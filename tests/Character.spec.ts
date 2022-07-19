@@ -31,5 +31,17 @@ describe("The Character class", () => {
     drizzt.dex = 20;
     expect(drizzt.str).toBe(0);
     expect(drizzt.dex).toBe(5);
+    try {
+      drizzt.dex = 200;
+    } catch (err) {
+      expect((err as Error).message).toBe("The new dexterity is invalid");
+      expect(drizzt.dex).toBe(5);
+    }
+    try {
+      drizzt.dex = 18.5;
+    } catch (err) {
+      expect((err as Error).message).toBe("The new dexterity is invalid");
+      expect(drizzt.dex).toBe(5);
+    }
   });
 });
