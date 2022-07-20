@@ -27,6 +27,9 @@ export class Character {
   public get str() {
     return Math.floor((this._STR - 10) / 2);
   }
+  public get baseStr() {
+    return this._STR;
+  }
   public set str(value: number) {
     if (value < 1 || value > 20 || Math.floor(value) !== value) {
       throw new Error("The new strength is invalid");
@@ -36,6 +39,9 @@ export class Character {
 
   public get dex() {
     return Math.floor((this._DEX - 10) / 2);
+  }
+  public get baseDex() {
+    return this._DEX;
   }
   public set dex(value: number) {
     if (value < 1 || value > 20 || Math.floor(value) !== value) {
@@ -47,6 +53,9 @@ export class Character {
   public get con() {
     return Math.floor((this._CON - 10) / 2);
   }
+  public get baseCon() {
+    return this._CON;
+  }
   public set con(value: number) {
     if (value < 1 || value > 20 || Math.floor(value) !== value) {
       throw new Error("The new constitution is invalid");
@@ -56,6 +65,9 @@ export class Character {
 
   public get int() {
     return Math.floor((this._INT - 10) / 2);
+  }
+  public get baseInt() {
+    return this._INT;
   }
   public set int(value: number) {
     if (value < 1 || value > 20 || Math.floor(value) !== value) {
@@ -67,6 +79,9 @@ export class Character {
   public get wis() {
     return Math.floor((this._WIS - 10) / 2);
   }
+  public get baseWis() {
+    return this._WIS;
+  }
   public set wis(value: number) {
     if (value < 1 || value > 20 || Math.floor(value) !== value) {
       throw new Error("The new wisdom is invalid");
@@ -76,6 +91,9 @@ export class Character {
 
   public get cha() {
     return Math.floor((this._CHA - 10) / 2);
+  }
+  public get baseCha() {
+    return this._CHA;
   }
   public set cha(value: number) {
     if (value < 1 || value > 20 || Math.floor(value) !== value) {
@@ -109,7 +127,7 @@ export class Character {
         break;
     }
 
-    return 0 + statMod + skillMod;
+    return statMod + skillMod;
   }
 
   roll(skill: Skill, overrideStat?: Stat) {
